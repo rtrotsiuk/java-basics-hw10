@@ -1,8 +1,8 @@
 public class ExampleException {
-  public static int rectangleArea(int a, int b) {
-    // TODO put your code here
-    return 0;
+  public static int rectangleArea(int a, int b) throws IllegalArgumentException {
+    if (a < 0 || b < 0){
+      throw new IllegalArgumentException("Cannot be negative input values");
+    }
+    return a*b;
   }
 }
-
-
