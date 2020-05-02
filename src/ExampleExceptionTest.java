@@ -43,9 +43,10 @@ public class ExampleExceptionTest {
 
 
   @Test(dataProvider = "negativeData")
-  public void testRectangleAreaNegative(int a, int b) {
+  public void testRectangleAreaNegative(int a, int b) throws IllegalArgumentException{
     try {
       ExampleException.rectangleArea(a, b);
+      fail("Expected an IllegalArgumentException to be thrown");
     } catch (IllegalArgumentException anIllegalArgumentException) {
       assertEquals(anIllegalArgumentException.getMessage(), ("Cannot be negative input values"));
     }
